@@ -18,11 +18,6 @@ status=cycle(["Velai Illa Pattathari","3","Kodi","Pattas","Yaaradi Nee Mohini","
 async def on_ready():
     changemovies.start()
     print("good to go")
-#movie cycle
-async def changemovies():
-    await bot.change_presence(activity=discord.Game(next(status)))      
-tasks = asyncio.create_task(changemovies())    
-@tasks.loop(seconds=5)
 
 @bot.event
 async def on_ready():
@@ -236,6 +231,10 @@ async def nandri(ctx):
         await ctx.bot.logout()
     else :
         await ctx.send('panni,do u have common sense')
+
+@tasks.loop(seconds=3)
+async def changemovies():
+    await client.change_presence(activity=discord.Game(next(status)))
 
 token=os.getenv('token')
 bot.run(token)
