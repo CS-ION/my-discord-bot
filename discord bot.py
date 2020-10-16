@@ -234,7 +234,7 @@ async def nandri(ctx):
 
 @tasks.loop(seconds=3)
 async def changemovies():
-    await client.change_presence(activity=discord.Game(next(status)))
+    await bot.change_presence(activity=discord.Game(next(status)))
 
 token=os.getenv('token')
 bot.run(token)
