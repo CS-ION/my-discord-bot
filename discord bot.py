@@ -17,12 +17,7 @@ status=cycle(["Velai Illa Pattathari","3","Kodi","Pattas","Yaaradi Nee Mohini","
 @bot.event
 async def on_ready():
     changemovies.start()
-    print("good to go")
-
-@bot.event
-async def on_ready():
     print(f"{bot.user} has connected to discord...\n")
-
 
 @bot.event
 async def on_command_error(ctx , error):
