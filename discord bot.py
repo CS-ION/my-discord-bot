@@ -286,10 +286,13 @@ async def everyone(ctx):
             continue
         await ctx.send(f'<@!{I}>')
 @bot.command()
-async def poll(ctx,*args):
+async def poll(ctx,*args,):
     embed = discord.Embed(title = f"POLLING\n{' '.join(args)}" , colour = discord.Colour.red())
-    embed.description= f"YES: y \n\nNO : N "
-    await ctx.send(embed = embed)
+    embed.description = f"YES:regional_indicator_y:  \n\nNO :regional_indicator_n:  "
+    #embed.set_image(url = 'https://th.thgim.com/migration_catalog/article11163206.ece/alternates/FREE_435/modi%20symbol%27)
+    message = await ctx.send(embed = embed)
+    await message.add_reaction(emoji='U+1F44D')
+    await message.add_reaction(emoji='U+1F44E')
     
 @bot.command()
 async def ipl(ctx):
@@ -513,4 +516,3 @@ async def changemovies():
 
 token=os.getenv('token')
 bot.run(token)
-
